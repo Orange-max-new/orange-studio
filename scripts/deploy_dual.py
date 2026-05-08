@@ -6,14 +6,16 @@ Usage (from repo root, where .git lives):
   python scripts/deploy_dual.py
   python scripts/deploy_dual.py -m "Update copy"
 
-Requires: git, scp (OpenSSH client), deploy.env in repo root (see deploy.env.example).
+Requires: git, ssh + tar (OpenSSH + Windows tar), deploy.env in repo root (see deploy.env.example).
 
-Dry-run prints commands without running destructive steps (scp still skipped when dry-run).
+Upload: one SSH session via tar pipe (not one password prompt per top-level item).
 """
 
 from __future__ import annotations
 
 import argparse
+import shlex
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -55,6 +57,76 @@ def run(cmd: list[str], *, cwd: Path | None = None, dry_run: bool) -> None:
     if dry_run:
         return
     subprocess.run(cmd, cwd=cwd, check=True)
+
+
+def collect_upload_entries(repo_root: Path) -> list[str]:
+    names: list[str] = []
+    for child in sorted(repo_root.iterdir(), key=lambda p: p.name.lower()):
+        name = child.name
+        if name in SCP_SKIP_NAMES:
+            continue
+        if name.startswith(".") and name not in {".gitignore"}:
+            continue
+        names.append(name)
+    return names
+
+
+def sync_via_tar_ssh(
+    *,
+    repo_root: Path,
+    user: str,
+    host: str,
+    remote_path: str,
+    ssh_key: str,
+    port: str,
+    dry_run: bool,
+) -> None:
+    entries = collect_upload_entries(repo_root)
+    rp = remote_path.rstrip("/")
+    remote_script = f"mkdir -p {shlex.quote(rp)} && cd {shlex.quote(rp)} && tar -xf -"
+
+    ssh_cmd: list[str] = ["ssh"]
+    if port and port != "22":
+        ssh_cmd.extend(["-p", port])
+    if ssh_key:
+        key_path = Path(ssh_key.replace("/", "\\")).expanduser().resolve()
+        if not key_path.is_file():
+            print(f"Warning: DEPLOY_SSH_KEY missing: {key_path}", file=sys.stderr)
+        ssh_cmd.extend(["-i", str(key_path)])
+    ssh_cmd.append(f"{user}@{host}")
+    ssh_cmd.append(remote_script)
+
+    tar_cmd = ["tar", "-cf", "-", *entries]
+
+    if dry_run:
+        print(f"+ {' '.join(tar_cmd)}  (cwd={repo_root})")
+        print(f"+ ssh ... {remote_script!r}")
+        return
+
+    if not entries:
+        print("Nothing to upload.", file=sys.stderr)
+        return
+
+    if not shutil.which("tar") or not shutil.which("ssh"):
+        print("Need tar and ssh on PATH.", file=sys.stderr)
+        sys.exit(1)
+
+    tar_p = subprocess.Popen(
+        tar_cmd,
+        cwd=str(repo_root),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    assert tar_p.stdout is not None
+    try:
+        subprocess.run(ssh_cmd, stdin=tar_p.stdout, check=True)
+    finally:
+        tar_p.stdout.close()
+        tar_err = tar_p.stderr.read().decode("utf-8", errors="replace") if tar_p.stderr else ""
+        tar_rc = tar_p.wait()
+        if tar_rc != 0:
+            print(f"tar failed ({tar_rc}): {tar_err}", file=sys.stderr)
+            sys.exit(tar_rc)
 
 
 def git_dirty() -> bool:
@@ -122,26 +194,17 @@ def main() -> int:
         run(["git", "push", "-u", "origin", branch], cwd=REPO_ROOT, dry_run=args.dry_run)
 
     if not args.skip_scp:
-        dest = f"{user}@{host}:{remote_path}"
+        sync_via_tar_ssh(
+            repo_root=REPO_ROOT,
+            user=user,
+            host=host,
+            remote_path=remote_path,
+            ssh_key=ssh_key,
+            port=port,
+            dry_run=args.dry_run,
+        )
 
-        for child in sorted(REPO_ROOT.iterdir(), key=lambda p: p.name.lower()):
-            name = child.name
-            if name in SCP_SKIP_NAMES:
-                continue
-            if name.startswith(".") and name not in {".gitignore"}:
-                # skip hidden clutter except .gitignore if present
-                continue
-
-            cmd = ["scp", "-r"]
-            if port and port != "22":
-                cmd.extend(["-P", port])
-            if ssh_key:
-                cmd.extend(["-i", ssh_key])
-            cmd.extend([str(child), dest])
-
-            run(cmd, cwd=REPO_ROOT, dry_run=args.dry_run)
-
-        print("\nDone. GitHub (Pages) updated via push; Aliyun docroot synced via scp.")
+        print("\nDone. GitHub (Pages) updated via push; Aliyun synced via single SSH+tar.")
         print(f"Check: http://{host} (hard refresh: Ctrl+F5)")
     else:
         print("\nSkipped scp (--skip-scp).")
