@@ -1,0 +1,3 @@
+Global negative hints (append to image/video tools when supported):
+
+low quality, worst quality, jpeg artifacts, watermark, signature, logo, text, UI, subtitles, extra fingers, mangled hands, fused fingers, muddy, desaturated grey soup, horror, gore, military, cyberpunk neon overload, fisheye lens distortion, dutch angle chaos, lens dirt
