@@ -78,7 +78,8 @@ body.site--portfolio {
   backdrop-filter: blur(10px);
 }
 
-.site--portfolio .panel-h1 > span:first-child {
+/* Use .pf-name — not span:first-child (whitespace text node before span breaks :first-child). */
+.site--portfolio .panel-h1 .pf-name {
   background: linear-gradient(
     118deg,
     var(--pf-name-orange-1) 0%,
@@ -89,6 +90,7 @@ body.site--portfolio {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
   font-family: var(--font-display);
   font-weight: 800;
 }
