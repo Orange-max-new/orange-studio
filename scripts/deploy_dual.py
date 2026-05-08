@@ -96,7 +96,8 @@ def sync_via_tar_ssh(
     ssh_cmd.append(f"{user}@{host}")
     ssh_cmd.append(remote_script)
 
-    tar_cmd = ["tar", "-cf", "-", *entries]
+    # ustar: omit Windows pax SCHILY.* headers GNU tar warns about on extract
+    tar_cmd = ["tar", "--format", "ustar", "-cf", "-", *entries]
 
     if dry_run:
         print(f"+ {' '.join(tar_cmd)}  (cwd={repo_root})")
