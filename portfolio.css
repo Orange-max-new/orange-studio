@@ -9,6 +9,11 @@ body.site--portfolio {
   --pf-accent: #c94b7c;
   --pf-accent2: #6b4d9a;
   --pf-teal: #3d9a84;
+  /* Hero glyph 「橘」— deeper orange / burnt amber (gradient stops) */
+  --pf-name-orange-1: #9a3412;
+  --pf-name-orange-2: #c2410c;
+  --pf-name-orange-3: #ea580c;
+  --pf-name-orange-4: #b45309;
   --pf-cream: #faf8f5;
   --pf-shadow: 0 12px 40px rgba(107, 77, 154, 0.08), 0 4px 16px rgba(61, 154, 132, 0.06);
   --font-display: "Noto Serif SC", "Songti SC", serif;
@@ -74,7 +79,13 @@ body.site--portfolio {
 }
 
 .site--portfolio .panel-h1 > span:first-child {
-  background: linear-gradient(118deg, var(--pf-teal) 0%, #5cb896 40%, var(--pf-accent) 72%, var(--pf-accent2) 100%);
+  background: linear-gradient(
+    118deg,
+    var(--pf-name-orange-1) 0%,
+    var(--pf-name-orange-2) 34%,
+    var(--pf-name-orange-3) 62%,
+    var(--pf-name-orange-4) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
