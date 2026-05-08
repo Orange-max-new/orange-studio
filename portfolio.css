@@ -392,3 +392,139 @@ body.site--portfolio {
 .site--portfolio .panel-idx {
   opacity: 0.08;
 }
+
+/* —— Flipbook demo (StPageFlip) under #work —— */
+.pf-flipbook-shell {
+  margin-top: clamp(2rem, 5vw, 2.85rem);
+  padding-top: clamp(1.35rem, 3vw, 1.85rem);
+  border-top: 1px solid var(--pf-line);
+}
+
+.pf-flipbook-title {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.22rem, 2.6vw, 1.48rem);
+}
+
+.pf-flipbook-lead {
+  margin: 0 0 0.35rem;
+  max-width: 52ch;
+}
+
+.pf-flipbook-hint {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  color: var(--pf-muted);
+  font-family: var(--font-en);
+  letter-spacing: 0.05em;
+}
+
+.pf-flipbook-mount {
+  margin: 0 auto;
+  max-width: min(460px, 100%);
+  min-height: 400px;
+}
+
+.pf-flip-inner {
+  box-sizing: border-box;
+  height: 100%;
+  padding: clamp(0.55rem, 1.8vw, 0.95rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: linear-gradient(145deg, #fffdfb 0%, #faf6f2 100%);
+}
+
+.pf-flip-inner img {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: contain;
+  border-radius: 0.4rem;
+  background: rgba(26, 31, 29, 0.05);
+}
+
+.pf-flip-cap {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--pf-muted);
+  letter-spacing: 0.03em;
+}
+
+.pf-flip-inner--cover {
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(160deg, #fff5eb 0%, #fde8d8 48%, #f8ddd0 100%);
+}
+
+.pf-flip-kicker {
+  margin: 0;
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--pf-name-orange-2);
+}
+
+.pf-flip-cover-title {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 3.8vw, 1.72rem);
+  font-weight: 800;
+  color: var(--pf-name-orange-1);
+}
+
+.pf-flip-cover-sub {
+  margin: 0.55rem 0 0;
+  font-size: 0.86rem;
+  color: var(--pf-muted);
+  line-height: 1.5;
+}
+
+.pf-flip-inner--back {
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(160deg, #f3faf8 0%, #e8f5f0 100%);
+}
+
+.pf-flip-back-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--pf-ink);
+}
+
+.pf-flip-back-text {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #3d4744;
+}
+
+.pf-flipbook-fallback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 0.75rem;
+}
+
+.pf-flipbook-fallback-grid figure {
+  margin: 0;
+  background: var(--pf-surface-strong);
+  border: 1px solid var(--pf-line);
+  border-radius: 0.65rem;
+  padding: 0.45rem;
+}
+
+.pf-flipbook-fallback-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.35rem;
+}
+
+.pf-flipbook-fallback-grid figcaption {
+  margin-top: 0.32rem;
+  font-size: 0.72rem;
+  color: var(--pf-muted);
+  text-align: center;
+}

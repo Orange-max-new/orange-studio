@@ -58,6 +58,26 @@
       workUpworkTitle: "接单与自动化",
       workUpworkDesc:
         "<strong>AI 建站</strong>、落地页与组件化界面；<strong>流程自动化</strong>与工具链拼接。英语沟通与交付节奏可按 Upwork 习惯来。",
+      flipbookH: "艾可岛 · 掌上小样画册",
+      flipbookLead:
+        "翻页式介绍（素材来自本站已有视觉；你可随时换成真实 App 截图）。拖拽页角翻页。",
+      flipHint: "提示：在书页两侧空白或角落拖动即可翻页。",
+      flipFallbackNote:
+        "静态预览（系统开启了「减少动态效果」或翻页脚本未加载时的备选）。",
+      flipCoverKicker: "Echo Island",
+      flipCoverTitle: "企划视觉小样",
+      flipCoverSub: "占位画册 · 可替换 App 真机截图",
+      flipCapConcept: "概念气氛 · AI 概念稿",
+      flipCapPoster: "主视觉海报",
+      flipCapIsland: "岛屿镜头 · 静态帧",
+      flipCapAlt: "备选画面",
+      flipBackTitle: "下一步",
+      flipBackHtml:
+        "把本画册里的图片换成你的 <strong>App Store / 安卓应用截图</strong>，就能变成「真·应用介绍」。合作咨询微信 <strong>Oz2888888</strong>。",
+      flipCap1: "概念稿",
+      flipCap2: "海报",
+      flipCap3: "岛屿帧",
+      flipCap4: "备选",
       marquee:
         "ORANGE STUDIO · JU · AI WEB · AUTOMATION · UE5 · ECHO ISLAND · GUI XU · ",
       moreH: "合作与接入",
@@ -159,6 +179,26 @@
       workUpworkTitle: "Client & automation",
       workUpworkDesc:
         "<strong>AI-assisted sites</strong>, landing pages, UI components; <strong>automation</strong> and toolchain glue. English-friendly delivery cadence.",
+      flipbookH: "Echo Island · pocket flipbook",
+      flipbookLead:
+        "A quick page-flip walkthrough using visuals already on this site — swap in real app screenshots anytime.",
+      flipHint: "Drag near the page edges or corners to flip.",
+      flipFallbackNote:
+        "Static gallery (reduced motion enabled or flip script unavailable).",
+      flipCoverKicker: "Echo Island",
+      flipCoverTitle: "Visual sampler",
+      flipCoverSub: "Placeholder spreads · swap for real device captures",
+      flipCapConcept: "Mood concept · AI render",
+      flipCapPoster: "Key art poster",
+      flipCapIsland: "Island frame · still",
+      flipCapAlt: "Alternate shot",
+      flipBackTitle: "Next step",
+      flipBackHtml:
+        "Replace these panels with your <strong>App Store / Play Store captures</strong> for a real product story. Collabs: WeChat <strong>Oz2888888</strong>.",
+      flipCap1: "Concept",
+      flipCap2: "Poster",
+      flipCap3: "Island",
+      flipCap4: "Alt",
       marquee:
         "ORANGE STUDIO · JU · AI WEB · AUTOMATION · UE5 · ECHO ISLAND · GUI XU · ",
       moreH: "Collaboration",
@@ -260,6 +300,26 @@
       workUpworkTitle: "受託 · 自動化",
       workUpworkDesc:
         "<strong>AIウェブ</strong>、LP、UI。<strong>自動化</strong>とツール連携。英語でのやり取りも可能。",
+      flipbookH: "エコアイランド · ミニブック",
+      flipbookLead:
+        "ページめくりデモ（素材は既存ビジュアル。アプリ画面に差し替え可能）。",
+      flipHint: "ページ端や角をドラッグしてめくれます。",
+      flipFallbackNote:
+        "静的表示（視差効果を減らす設定、またはスクリプト未読込時）。",
+      flipCoverKicker: "Echo Island",
+      flipCoverTitle: "ビジュアルサンプル",
+      flipCoverSub: "プレースホルダー · 実機スクショに置換可",
+      flipCapConcept: "コンセプト · AIイメージ",
+      flipCapPoster: "キービジュアル",
+      flipCapIsland: "島のカット · 静止画",
+      flipCapAlt: "別カット",
+      flipBackTitle: "次の一歩",
+      flipBackHtml:
+        "ここを<strong>ストアのスクショ</strong>に差し替えれば製品紹介に。WeChat <strong>Oz2888888</strong>。",
+      flipCap1: "コンセプト",
+      flipCap2: "KV",
+      flipCap3: "島",
+      flipCap4: "別画",
       marquee:
         "ORANGE STUDIO · JU · AI WEB · AUTOMATION · UE5 · ECHO ISLAND · GUI XU · ",
       moreH: "協業と接続",
@@ -361,6 +421,26 @@
       workUpworkTitle: "의뢰 · 자동화",
       workUpworkDesc:
         "<strong>AI 웹</strong>, 랜딩, UI.<strong>자동화</strong>와 툴 연동. 영어 커뮤니케이션 가능.",
+      flipbookH: "에코 아일랜드 · 플립북 데모",
+      flipbookLead:
+        "페이지 넘김 소개(기존 비주얼 기반, 앱 스크린으로 교체 가능).",
+      flipHint: "페이지 모서리 근처를 드래그해 넘기세요.",
+      flipFallbackNote:
+        "정적 미리보기(모션 축소 설정 또는 스크립트 미로드).",
+      flipCoverKicker: "Echo Island",
+      flipCoverTitle: "비주얼 샘플",
+      flipCoverSub: "플레이스홀더 · 실제 스크린샷으로 교체",
+      flipCapConcept: "무드 컨셉 · AI 이미지",
+      flipCapPoster: "키 비주얼 포스터",
+      flipCapIsland: "섬 컷 · 스틸",
+      flipCapAlt: "대체 샷",
+      flipBackTitle: "다음 단계",
+      flipBackHtml:
+        "패널을 <strong>스토어 스크린샷</strong>으로 바꾸면 제품 소개가 됩니다. WeChat <strong>Oz2888888</strong>.",
+      flipCap1: "컨셉",
+      flipCap2: "포스터",
+      flipCap3: "섬",
+      flipCap4: "대체",
       marquee:
         "ORANGE STUDIO · JU · AI WEB · AUTOMATION · UE5 · ECHO ISLAND · GUI XU · ",
       moreH: "협업 · 연결",

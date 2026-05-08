@@ -139,4 +139,72 @@
       mvAiko.setAttribute("src", fb);
     });
   }
+
+  /* Echo Island flipbook — StPageFlip (page-flip CDN), lazy-init when section visible */
+  var flipShell = document.getElementById("app-flipbook");
+  var flipRoot = document.getElementById("echo-app-book");
+  var flipFallback = document.getElementById("echo-flip-fallback");
+  if (flipShell && flipRoot && flipFallback) {
+    var reducedFlip =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function showFlipFallback() {
+      flipRoot.setAttribute("hidden", "");
+      flipRoot.setAttribute("aria-hidden", "true");
+      flipFallback.hidden = false;
+    }
+
+    function runFlipInit() {
+      if (!window.St || !window.St.PageFlip) {
+        showFlipFallback();
+        return;
+      }
+      var pages = flipRoot.querySelectorAll(".pf-flip-page");
+      if (!pages.length) return;
+      try {
+        var pf = new window.St.PageFlip(flipRoot, {
+          width: 320,
+          height: 480,
+          size: "stretch",
+          minWidth: 260,
+          maxWidth: 440,
+          minHeight: 380,
+          maxHeight: 580,
+          maxShadowOpacity: 0.42,
+          showCover: true,
+          mobileScrollSupport: false,
+          flippingTime: 760,
+        });
+        if (typeof pf.loadFromHtml === "function") pf.loadFromHtml(pages);
+        else if (typeof pf.loadFromHTML === "function") pf.loadFromHTML(pages);
+        window.__echoPageFlip = pf;
+      } catch (err) {
+        console.warn("Echo flipbook:", err);
+        showFlipFallback();
+      }
+    }
+
+    if (reducedFlip) {
+      showFlipFallback();
+    } else if ("IntersectionObserver" in window) {
+      var flipIo = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            flipIo.disconnect();
+            requestAnimationFrame(function () {
+              requestAnimationFrame(runFlipInit);
+            });
+          });
+        },
+        { root: null, rootMargin: "100px 0px", threshold: 0.06 }
+      );
+      flipIo.observe(flipShell);
+    } else {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(runFlipInit);
+      });
+    }
+  }
 })();
