@@ -128,6 +128,62 @@
     }
   }
 
+  /* Hero island: switch loop video ↔ echo-island.glb */
+  var islandTabs = document.querySelectorAll("[data-island-tab]");
+  var islandSlides = document.querySelectorAll("[data-island-slide]");
+  var islandVideoMain = document.getElementById("echo-island-video");
+  var islandModel = document.getElementById("echo-model-island");
+  if (islandTabs.length && islandSlides.length) {
+    islandTabs.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var mode = btn.getAttribute("data-island-tab");
+        islandTabs.forEach(function (b) {
+          var on = b.getAttribute("data-island-tab") === mode;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        islandSlides.forEach(function (slide) {
+          var on = slide.getAttribute("data-island-slide") === mode;
+          slide.classList.toggle("is-active", on);
+          if (on) slide.removeAttribute("hidden");
+          else slide.setAttribute("hidden", "");
+        });
+        if (mode === "glb") {
+          if (islandVideoMain) islandVideoMain.pause();
+        } else {
+          if (islandModel && typeof islandModel.pause === "function") islandModel.pause();
+          if (islandVideoMain && !reduced) {
+            var playAgain = islandVideoMain.play();
+            if (playAgain && typeof playAgain.catch === "function") {
+              playAgain.catch(function () {});
+            }
+          }
+        }
+      });
+    });
+  }
+  if (islandModel && reduced) {
+    islandModel.removeAttribute("auto-rotate");
+  }
+
+  /* Explore map → cutaway dialog */
+  var exploreDlg = document.getElementById("echo-explore-dialog");
+  if (exploreDlg) {
+    document.querySelectorAll("[data-explore-open]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (typeof exploreDlg.showModal === "function") exploreDlg.showModal();
+      });
+    });
+    exploreDlg.querySelectorAll("[data-explore-close]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        exploreDlg.close();
+      });
+    });
+    exploreDlg.addEventListener("click", function (e) {
+      if (e.target === exploreDlg) exploreDlg.close();
+    });
+  }
+
   /* Aiko sphere: prefer 艾可.glb, fall back to rigged T-pose */
   if (mvAiko) {
     var swapped = false;

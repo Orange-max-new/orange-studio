@@ -111,40 +111,109 @@
               <div class="pf-hero-showcase">
                 <div class="pf-mini-split">
                   <figure class="hero-globe-inset hero-globe-inset--island">
-                    <div
-                      class="echo-globe-frame echo-globe-frame--inset echo-globe-frame--mode-video echo-globe-frame--image-fill"
-                    >
-                      <video
-                        id="echo-island-video"
-                        class="echo-hero-video"
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        webkit-playsinline
-                        poster="assets/岛.png"
-                        preload="metadata"
-                        aria-label=""
-                        data-i18n-aria="islandVideoAria"
+                    <div class="pf-island-tabs" role="tablist" aria-label="" data-i18n-aria="islandTabsAria">
+                      <button
+                        type="button"
+                        class="pf-island-tab is-active"
+                        role="tab"
+                        aria-selected="true"
+                        id="tab-island-video"
+                        aria-controls="panel-island-video"
+                        data-island-tab="video"
+                        data-i18n="islandTabVideo"
                       >
-                        <source src="assets/岛.mp4" type="video/mp4" />
-                      </video>
-                      <img
-                        id="echo-island-video-fallback"
-                        class="echo-island-full echo-island-full--fallback"
-                        src="assets/岛.png"
-                        width="512"
-                        height="512"
-                        decoding="async"
-                        alt=""
-                        data-i18n-alt="islandImgAlt"
+                        循环影像
+                      </button>
+                      <button
+                        type="button"
+                        class="pf-island-tab"
+                        role="tab"
+                        aria-selected="false"
+                        id="tab-island-glb"
+                        aria-controls="panel-island-glb"
+                        data-island-tab="glb"
+                        data-i18n="islandTabGlb"
+                      >
+                        3D 岛屿 GLB
+                      </button>
+                    </div>
+                    <div
+                      class="echo-globe-frame echo-globe-frame--inset echo-globe-frame--mode-video echo-globe-frame--image-fill pf-island-frame"
+                    >
+                      <div
+                        id="panel-island-video"
+                        class="pf-island-slide is-active"
+                        role="tabpanel"
+                        aria-labelledby="tab-island-video"
+                        data-island-slide="video"
+                      >
+                        <video
+                          id="echo-island-video"
+                          class="echo-hero-video"
+                          autoplay
+                          muted
+                          loop
+                          playsinline
+                          webkit-playsinline
+                          poster="assets/岛.png"
+                          preload="metadata"
+                          aria-label=""
+                          data-i18n-aria="islandVideoAria"
+                        >
+                          <source src="assets/岛.mp4" type="video/mp4" />
+                        </video>
+                        <img
+                          id="echo-island-video-fallback"
+                          class="echo-island-full echo-island-full--fallback"
+                          src="assets/岛.png"
+                          width="512"
+                          height="512"
+                          decoding="async"
+                          alt=""
+                          data-i18n-alt="islandImgAlt"
+                          hidden
+                          onerror="this.onerror=null;this.src='assets/echo-poster.png'"
+                        />
+                      </div>
+                      <div
+                        id="panel-island-glb"
+                        class="pf-island-slide pf-island-slide--glb"
+                        role="tabpanel"
+                        aria-labelledby="tab-island-glb"
                         hidden
-                        onerror="this.onerror=null;this.src='assets/echo-poster.png'"
-                      />
+                        data-island-slide="glb"
+                      >
+                        <model-viewer
+                          id="echo-model-island"
+                          class="echo-model echo-model--island"
+                          src="assets/echo-island.glb"
+                          alt=""
+                          data-i18n-alt="modelAltIsland"
+                          poster="assets/岛.png"
+                          camera-controls
+                          touch-action="none"
+                          interaction-prompt="none"
+                          interaction-policy="always"
+                          shadow-intensity="0.55"
+                          shadow-softness="1"
+                          exposure="1.08"
+                          environment-image="neutral"
+                          tone-mapping="commerce"
+                          field-of-view="42deg"
+                          camera-orbit="24deg 68deg 92%"
+                          min-camera-orbit="auto auto auto"
+                          max-camera-orbit="auto auto auto"
+                          auto-rotate
+                          rotation-per-second="12deg"
+                        ></model-viewer>
+                      </div>
                     </div>
                   </figure>
                   <p class="pf-mini-whisper" data-i18n-html="islandWhisper">
                     艾可岛 · 球幕里的循环影像——叙事的一部分。
+                  </p>
+                  <p class="pf-mini-whisper pf-mini-whisper--note" data-i18n="islandModeHint">
+                    「循环影像」与「3D 岛屿 GLB」可切换；岛屿模型文件为 echo-island.glb（本站 assets）。
                   </p>
                 </div>
                 <div class="pf-mini-split">
@@ -241,6 +310,40 @@
                 <strong>AI 建站</strong>、落地页与组件化界面；<strong>流程自动化</strong>与工具链拼接。英语沟通与交付节奏可按 Upwork 习惯来。
               </p>
             </article>
+          </div>
+
+          <div id="echo-explore" class="pf-explore reveal reveal-delay-1">
+            <h3 class="pf-explore-title pf-section-title" data-i18n="exploreH">可探索的岛 · 点一点小屋</h3>
+            <p class="pf-explore-lead pf-section-lead" data-i18n="exploreLead">
+              下面是一组<strong>示意级交互</strong>：点击地图上发光的屋子，会弹出「切面」式的室内读法——用来演示「不是只摆建模和视频」，而是能做成可点的体验流。
+            </p>
+            <div class="pf-explore-stage">
+              <img
+                class="pf-explore-bg"
+                src="assets/explore-island-exterior.png"
+                width="1600"
+                height="900"
+                decoding="async"
+                loading="lazy"
+                alt=""
+                data-i18n-alt="exploreMapAlt"
+              />
+              <button
+                type="button"
+                class="pf-explore-hotspot"
+                style="left: 54%; top: 46%"
+                aria-haspopup="dialog"
+                aria-controls="echo-explore-dialog"
+                data-explore-open="cutaway"
+              >
+                <span class="pf-explore-pulse" aria-hidden="true"></span>
+                <span class="pf-explore-hotspot-core" aria-hidden="true"></span>
+                <span class="pf-explore-hotspot-label" data-i18n="exploreHotspotHouse">岛上小屋</span>
+              </button>
+            </div>
+            <p class="pf-explore-foot" data-i18n="exploreFoot">
+              插画由生成式工具快速出稿、仅作网站演示；正式产品可换成 UE5 实机、真 App 画面或你的品牌主图。
+            </p>
           </div>
 
           <div id="app-flipbook" class="pf-flipbook-shell reveal reveal-delay-1">
@@ -425,6 +528,36 @@
         </form>
       </div>
     </section>
+
+    <dialog id="echo-explore-dialog" class="pf-explore-dialog" aria-labelledby="explore-dialog-title">
+      <div class="pf-explore-dialog-inner">
+        <button
+          type="button"
+          class="pf-explore-dialog-close"
+          data-explore-close
+          aria-label=""
+          data-i18n-aria="exploreCloseAria"
+        >
+          ×
+        </button>
+        <img
+          class="pf-explore-dialog-img"
+          src="assets/explore-house-cutaway.png"
+          width="1200"
+          height="900"
+          loading="lazy"
+          decoding="async"
+          alt=""
+          data-i18n-alt="exploreCutawayAlt"
+        />
+        <h4 id="explore-dialog-title" class="pf-explore-dialog-title" data-i18n="exploreDialogTitle">
+          小屋切面（可读的空间）
+        </h4>
+        <p class="pf-explore-dialog-body" data-i18n="exploreDialogBody">
+          这条链路演示的是：<strong>热点 → 信息层 → 更深的视觉阅读</strong>。你若做 App / 元宇宙展位 / 品牌馆，可以把这里换成真实户型剖面、关卡纵切面或叙事分镜。
+        </p>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <div class="footer-main page-width">

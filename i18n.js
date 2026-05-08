@@ -35,6 +35,24 @@
       aikoWhisper: "角色艾可 · 可拖拽的 GLB 预览。",
       modelAltAiko: "艾可 Echo",
       islandImgAlt: "",
+      islandTabsAria: "艾可岛展示模式",
+      islandTabVideo: "循环影像",
+      islandTabGlb: "3D 岛屿 GLB",
+      islandModeHint:
+        "「循环影像」与「3D 岛屿」可切换；岛屿模型为 assets/echo-island.glb（域名「岛.glb」若无单独文件，即用此资源）。",
+      modelAltIsland: "艾可岛 · 可旋转岛屿模型（echo-island.glb）",
+      exploreH: "可探索的岛 · 点一点小屋",
+      exploreLead:
+        "示意<strong>热点 → 切面阅读</strong>：访客不只看到成片与建模，还能完成一次「点开—读懂结构」的路径。（插画为快速演示稿，可替换成你的 UE / App 真画面。）",
+      exploreMapAlt: "艾可岛外景示意地图",
+      exploreHotspotHouse: "岛上小屋",
+      exploreFoot:
+        "若要升级到「真·产品体验」，可把热点接入真实关卡流、商店截图墙或 WebGL 行走相机；商务与技术边界私信对齐即可。",
+      exploreCloseAria: "关闭切面说明",
+      exploreCutawayAlt: "小屋切面示意插画",
+      exploreDialogTitle: "小屋切面（可读的空间）",
+      exploreDialogBody:
+        "演示链路：<strong>地图热点 → 弹出信息层 → 剖面/室内阅读</strong>。你可换成关卡纵剖、关卡平面图、角色设定层或 App 关键屏。",
       aboutH: "关于",
       aboutP:
         "我这个人<strong>想法比较多</strong>，也更愿意把点子落成<strong>能上线的产品与页面</strong>——做过站点、自动化流程，也在啃 UE5 与 3D 管线。平时会从 <strong>GitHub</strong> 和当下的前端实践里持续吸收有用的东西，包括<strong>现代的界面审美与信息层级</strong>，但最终交付一定是为你的场景裁剪过的，而不是把教程抄一页给大家看。",
@@ -156,6 +174,24 @@
       aikoWhisper: "Echo · draggable GLB preview.",
       modelAltAiko: "Echo companion",
       islandImgAlt: "",
+      islandTabsAria: "Echo Island display mode",
+      islandTabVideo: "Loop video",
+      islandTabGlb: "Island GLB",
+      islandModeHint:
+        "Toggle loop footage vs the downloadable island mesh (assets/echo-island.glb).",
+      modelAltIsland: "Echo Island · orbitable island mesh (echo-island.glb)",
+      exploreH: "Tiny island you can poke · tap the house",
+      exploreLead:
+        "A lightweight <strong>hotspot → cross-section read</strong> pattern so visitors don’t only passively watch video/GLB.",
+      exploreMapAlt: "Stylized exterior map for the Echo Island demo",
+      exploreHotspotHouse: "House",
+      exploreFoot:
+        "Art here is fast generated polish for the web demo — swap for UE captures, store shots, or branded boards anytime.",
+      exploreCloseAria: "Close cutaway panel",
+      exploreCutawayAlt: "Illustrated dollhouse-style cutaway interior",
+      exploreDialogTitle: "House cutaway (readable space)",
+      exploreDialogBody:
+        "Shows the interaction spine: <strong>hotspot → overlay → deeper visual read</strong>. Replace with level slices, UX storyboards, or hero screens.",
       aboutH: "About",
       aboutP:
         "I’m <strong>idea-heavy</strong> and like turning concepts into <strong>real products and pages</strong> — sites, automation flows, plus UE5 / 3D pipelines in progress. I keep learning from <strong>GitHub</strong> and modern front-end practice (including <strong>UI hierarchy & polish</strong>), but delivery stays tailored to your context — not a public tutorial dump.",
@@ -277,6 +313,24 @@
       aikoWhisper: "エコ · ドラッグ可能なGLB。",
       modelAltAiko: "エコ",
       islandImgAlt: "",
+      islandTabsAria: "エコアイランド表示モード",
+      islandTabVideo: "ループ映像",
+      islandTabGlb: "島GLB",
+      islandModeHint:
+        "ループ映像と3D島モデル（assets/echo-island.glb）を切替できます。",
+      modelAltIsland: "エコアイランド · 回転可能な島メッシュ",
+      exploreH: "探索できる島 · 家をタップ",
+      exploreLead:
+        "ホットスポット→断面ビューの<strong>示意インタラクション</strong>（デモ用イラスト、後で差し替え可）。",
+      exploreMapAlt: "エコアイランド外景マップ（デモ）",
+      exploreHotspotHouse: "小屋",
+      exploreFoot:
+        "本番ではUEキャプチャやアプリ画面に差し替え可能。詳細は個別相談。",
+      exploreCloseAria: "断面パネルを閉じる",
+      exploreCutawayAlt: "小屋の断面イメージ",
+      exploreDialogTitle: "小屋断面（空間の読み）",
+      exploreDialogBody:
+        "ホットスポット→情報レイヤ→断面という流れのデモです。",
       aboutH: "について",
       aboutP:
         "アイデアが多く、<strong>プロダクトやページとして形にする</strong>ことに強みがあります。サイト・自動化・UE5/3Dも進行中。<strong>GitHub</strong>や現代的なフロント実践から<strong>UIの見せ方や情報設計</strong>も取り入れますが、公開ページでチュートリアルを丸ごと晒すことはしません。",
@@ -398,6 +452,24 @@
       aikoWhisper: "에코 · 드래그 가능한 GLB.",
       modelAltAiko: "에코",
       islandImgAlt: "",
+      islandTabsAria: "에코 아일랜드 표시 모드",
+      islandTabVideo: "루프 영상",
+      islandTabGlb: "섬 GLB",
+      islandModeHint:
+        "루프 영상과 3D 섬 메시(assets/echo-island.glb)를 전환할 수 있습니다.",
+      modelAltIsland: "에코 아일랜드 · 회전 가능한 섬 메시",
+      exploreH: "탐험 섬 · 집을 눌러보기",
+      exploreLead:
+        "핫스팟→단면 뷰로 이어지는 <strong>체험형 데모</strong>(삽화는 빠른 시안).",
+      exploreMapAlt: "에코 아일랜드 외경 맵 데모",
+      exploreHotspotHouse: "오두막",
+      exploreFoot:
+        "실제 서비스에서는 UE 캡처·앱 화면으로 교체 가능. 상세는 DM으로.",
+      exploreCloseAria: "단면 패널 닫기",
+      exploreCutawayAlt: "오두막 단면 일러스트",
+      exploreDialogTitle: "오두막 단면(공간 읽기)",
+      exploreDialogBody:
+        "핫스포트→정보 레이어→단면 읽기 흐름을 보여주는 데모입니다.",
       aboutH: "소개",
       aboutP:
         "아이디어가 많고 <strong>실제 제품·페이지로 옮기는 일</strong>을 좋아합니다. 사이트·자동화·UE5/3D도 진행 중입니다. <strong>GitHub</strong>와 최신 프론트 관행에서 <strong>UI 계층과 미적 기준</strong>을 배우지만, 공개 페이지에 튜토리얼 전체를 풀지는 않습니다.",
