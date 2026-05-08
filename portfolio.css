@@ -80,6 +80,10 @@ body.site--portfolio {
 
 /* Use .pf-name — not span:first-child (whitespace text node before span breaks :first-child). */
 .site--portfolio .panel-h1 .pf-name {
+  /* .panel--hero .panel-h1 (styles.css) sets a heavy white text-shadow; it inherits here and
+     washes out gradient / transparent fill → looks like a faint pink watermark. */
+  text-shadow: none;
+  filter: none;
   background: linear-gradient(
     118deg,
     var(--pf-name-orange-1) 0%,
