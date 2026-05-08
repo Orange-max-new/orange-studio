@@ -111,109 +111,40 @@
               <div class="pf-hero-showcase">
                 <div class="pf-mini-split">
                   <figure class="hero-globe-inset hero-globe-inset--island">
-                    <div class="pf-island-tabs" role="tablist" aria-label="" data-i18n-aria="islandTabsAria">
-                      <button
-                        type="button"
-                        class="pf-island-tab is-active"
-                        role="tab"
-                        aria-selected="true"
-                        id="tab-island-video"
-                        aria-controls="panel-island-video"
-                        data-island-tab="video"
-                        data-i18n="islandTabVideo"
-                      >
-                        循环影像
-                      </button>
-                      <button
-                        type="button"
-                        class="pf-island-tab"
-                        role="tab"
-                        aria-selected="false"
-                        id="tab-island-glb"
-                        aria-controls="panel-island-glb"
-                        data-island-tab="glb"
-                        data-i18n="islandTabGlb"
-                      >
-                        3D 岛屿 GLB
-                      </button>
-                    </div>
                     <div
-                      class="echo-globe-frame echo-globe-frame--inset echo-globe-frame--mode-video echo-globe-frame--image-fill pf-island-frame"
+                      class="echo-globe-frame echo-globe-frame--inset echo-globe-frame--mode-video echo-globe-frame--image-fill"
                     >
-                      <div
-                        id="panel-island-video"
-                        class="pf-island-slide is-active"
-                        role="tabpanel"
-                        aria-labelledby="tab-island-video"
-                        data-island-slide="video"
+                      <video
+                        id="echo-island-video"
+                        class="echo-hero-video"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        webkit-playsinline
+                        poster="assets/岛.png"
+                        preload="metadata"
+                        aria-label=""
+                        data-i18n-aria="islandVideoAria"
                       >
-                        <video
-                          id="echo-island-video"
-                          class="echo-hero-video"
-                          autoplay
-                          muted
-                          loop
-                          playsinline
-                          webkit-playsinline
-                          poster="assets/岛.png"
-                          preload="metadata"
-                          aria-label=""
-                          data-i18n-aria="islandVideoAria"
-                        >
-                          <source src="assets/岛.mp4" type="video/mp4" />
-                        </video>
-                        <img
-                          id="echo-island-video-fallback"
-                          class="echo-island-full echo-island-full--fallback"
-                          src="assets/岛.png"
-                          width="512"
-                          height="512"
-                          decoding="async"
-                          alt=""
-                          data-i18n-alt="islandImgAlt"
-                          hidden
-                          onerror="this.onerror=null;this.src='assets/echo-poster.png'"
-                        />
-                      </div>
-                      <div
-                        id="panel-island-glb"
-                        class="pf-island-slide pf-island-slide--glb"
-                        role="tabpanel"
-                        aria-labelledby="tab-island-glb"
+                        <source src="assets/岛.mp4" type="video/mp4" />
+                      </video>
+                      <img
+                        id="echo-island-video-fallback"
+                        class="echo-island-full echo-island-full--fallback"
+                        src="assets/岛.png"
+                        width="512"
+                        height="512"
+                        decoding="async"
+                        alt=""
+                        data-i18n-alt="islandImgAlt"
                         hidden
-                        data-island-slide="glb"
-                      >
-                        <model-viewer
-                          id="echo-model-island"
-                          class="echo-model echo-model--island"
-                          src="assets/echo-island.glb"
-                          alt=""
-                          data-i18n-alt="modelAltIsland"
-                          poster="assets/岛.png"
-                          camera-controls
-                          touch-action="none"
-                          interaction-prompt="none"
-                          interaction-policy="always"
-                          shadow-intensity="0.55"
-                          shadow-softness="1"
-                          exposure="1.08"
-                          environment-image="neutral"
-                          tone-mapping="commerce"
-                          field-of-view="42deg"
-                          camera-orbit="24deg 68deg 92%"
-                          min-camera-orbit="auto auto auto"
-                          max-camera-orbit="auto auto auto"
-                          auto-rotate
-                          rotation-per-second="12deg"
-                        ></model-viewer>
-                      </div>
+                        onerror="this.onerror=null;this.src='assets/echo-poster.png'"
+                      />
                     </div>
                   </figure>
                   <p class="pf-mini-whisper" data-i18n-html="islandWhisper">
                     艾可岛 · 球幕里的循环影像——叙事的一部分。
-                  </p>
-                  <p class="pf-mini-whisper pf-mini-whisper--note" data-i18n="islandModeHint">
-                    「循环影像」与「3D 岛屿 GLB」可切换；岛屿模型文件为 echo-island.glb（本站 assets）。
                   </p>
                 </div>
                 <div class="pf-mini-split">
@@ -310,113 +241,6 @@
                 <strong>AI 建站</strong>、落地页与组件化界面；<strong>流程自动化</strong>与工具链拼接。英语沟通与交付节奏可按 Upwork 习惯来。
               </p>
             </article>
-          </div>
-
-          <div id="echo-explore" class="pf-explore reveal reveal-delay-1">
-            <h3 class="pf-explore-title pf-section-title" data-i18n="exploreH">可探索的岛 · 点一点小屋</h3>
-            <p class="pf-explore-lead pf-section-lead" data-i18n="exploreLead">
-              下面是一组<strong>示意级交互</strong>：点击地图上发光的屋子，会弹出「切面」式的室内读法——用来演示「不是只摆建模和视频」，而是能做成可点的体验流。
-            </p>
-            <div class="pf-explore-stage">
-              <img
-                class="pf-explore-bg"
-                src="assets/explore-island-exterior.png"
-                width="1600"
-                height="900"
-                decoding="async"
-                loading="lazy"
-                alt=""
-                data-i18n-alt="exploreMapAlt"
-              />
-              <button
-                type="button"
-                class="pf-explore-hotspot"
-                style="left: 54%; top: 46%"
-                aria-haspopup="dialog"
-                aria-controls="echo-explore-dialog"
-                data-explore-open="cutaway"
-              >
-                <span class="pf-explore-pulse" aria-hidden="true"></span>
-                <span class="pf-explore-hotspot-core" aria-hidden="true"></span>
-                <span class="pf-explore-hotspot-label" data-i18n="exploreHotspotHouse">岛上小屋</span>
-              </button>
-            </div>
-            <p class="pf-explore-foot" data-i18n="exploreFoot">
-              插画由生成式工具快速出稿、仅作网站演示；正式产品可换成 UE5 实机、真 App 画面或你的品牌主图。
-            </p>
-          </div>
-
-          <div id="app-flipbook" class="pf-flipbook-shell reveal reveal-delay-1">
-            <h3 class="pf-flipbook-title pf-section-title" data-i18n="flipbookH">艾可岛 · 掌上小样画册</h3>
-            <p class="pf-flipbook-lead pf-section-lead" data-i18n="flipbookLead">
-              下面是翻页式介绍（素材来自本站已有视觉；你可随时换成真实 App 截图）。拖拽页角翻页。
-            </p>
-            <p class="pf-flipbook-hint" data-i18n="flipHint">提示：在书页两侧空白或角落拖动即可翻页。</p>
-
-            <div id="echo-app-book" class="pf-flipbook-mount" aria-label="Echo Island flipbook demo">
-              <div class="pf-flip-page" data-density="hard">
-                <div class="pf-flip-inner pf-flip-inner--cover">
-                  <p class="pf-flip-kicker" data-i18n="flipCoverKicker">Echo Island</p>
-                  <p class="pf-flip-cover-title" data-i18n="flipCoverTitle">企划视觉小样</p>
-                  <p class="pf-flip-cover-sub" data-i18n="flipCoverSub">占位画册 · 可替换 App 真机截图</p>
-                </div>
-              </div>
-              <div class="pf-flip-page">
-                <div class="pf-flip-inner">
-                  <img src="assets/echo-island-ai-hero-concept.png" alt="" loading="lazy" decoding="async" />
-                  <p class="pf-flip-cap" data-i18n="flipCapConcept">概念气氛 · AI 概念稿</p>
-                </div>
-              </div>
-              <div class="pf-flip-page">
-                <div class="pf-flip-inner">
-                  <img src="assets/echo-poster.png" alt="" loading="lazy" decoding="async" />
-                  <p class="pf-flip-cap" data-i18n="flipCapPoster">主视觉海报</p>
-                </div>
-              </div>
-              <div class="pf-flip-page">
-                <div class="pf-flip-inner">
-                  <img src="assets/岛.png" alt="" loading="lazy" decoding="async" />
-                  <p class="pf-flip-cap" data-i18n="flipCapIsland">岛屿镜头 · 静态帧</p>
-                </div>
-              </div>
-              <div class="pf-flip-page">
-                <div class="pf-flip-inner">
-                  <img src="assets/echo-alt-still.png" alt="" loading="lazy" decoding="async" />
-                  <p class="pf-flip-cap" data-i18n="flipCapAlt">备选画面</p>
-                </div>
-              </div>
-              <div class="pf-flip-page" data-density="hard">
-                <div class="pf-flip-inner pf-flip-inner--back">
-                  <p class="pf-flip-back-title" data-i18n="flipBackTitle">下一步</p>
-                  <p class="pf-flip-back-text" data-i18n-html="flipBackHtml">
-                    把本画册里的图片换成你的 <strong>App Store / 安卓应用截图</strong> 即可变「真·应用介绍」。合作咨询微信
-                    <strong>Oz2888888</strong>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="pf-flipbook-fallback" id="echo-flip-fallback" hidden>
-              <p class="pf-flipbook-hint" data-i18n="flipFallbackNote">已为你展开静态预览（系统开启了减少动态效果或未加载翻页脚本）。</p>
-              <div class="pf-flipbook-fallback-grid">
-                <figure>
-                  <img src="assets/echo-island-ai-hero-concept.png" alt="" loading="lazy" />
-                  <figcaption data-i18n="flipCap1">概念稿</figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/echo-poster.png" alt="" loading="lazy" />
-                  <figcaption data-i18n="flipCap2">海报</figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/岛.png" alt="" loading="lazy" />
-                  <figcaption data-i18n="flipCap3">岛屿帧</figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/echo-alt-still.png" alt="" loading="lazy" />
-                  <figcaption data-i18n="flipCap4">备选</figcaption>
-                </figure>
-              </div>
-            </div>
           </div>
         </section>
       </div>
@@ -529,36 +353,6 @@
       </div>
     </section>
 
-    <dialog id="echo-explore-dialog" class="pf-explore-dialog" aria-labelledby="explore-dialog-title">
-      <div class="pf-explore-dialog-inner">
-        <button
-          type="button"
-          class="pf-explore-dialog-close"
-          data-explore-close
-          aria-label=""
-          data-i18n-aria="exploreCloseAria"
-        >
-          ×
-        </button>
-        <img
-          class="pf-explore-dialog-img"
-          src="assets/explore-house-cutaway.png"
-          width="1200"
-          height="900"
-          loading="lazy"
-          decoding="async"
-          alt=""
-          data-i18n-alt="exploreCutawayAlt"
-        />
-        <h4 id="explore-dialog-title" class="pf-explore-dialog-title" data-i18n="exploreDialogTitle">
-          小屋切面（可读的空间）
-        </h4>
-        <p class="pf-explore-dialog-body" data-i18n="exploreDialogBody">
-          这条链路演示的是：<strong>热点 → 信息层 → 更深的视觉阅读</strong>。你若做 App / 元宇宙展位 / 品牌馆，可以把这里换成真实户型剖面、关卡纵切面或叙事分镜。
-        </p>
-      </div>
-    </dialog>
-
     <footer class="site-footer">
       <div class="footer-main page-width">
         <div class="footer-col">
@@ -595,7 +389,6 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/page-flip@2.0.7/dist/js/page-flip.browser.js" crossorigin="anonymous"></script>
     <script src="i18n.js"></script>
     <script src="script.js"></script>
   </body>

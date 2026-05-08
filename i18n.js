@@ -39,7 +39,7 @@
       islandTabVideo: "循环影像",
       islandTabGlb: "3D 岛屿 GLB",
       islandModeHint:
-        "「循环影像」与「3D 岛屿」可切换；岛屿模型为 assets/echo-island.glb（域名「岛.glb」若无单独文件，即用此资源）。",
+        "「循环影像」与「3D 岛屿 GLB」可切换；岛屿模型文件为 echo-island.glb（本站 assets）。",
       modelAltIsland: "艾可岛 · 可旋转岛屿模型（echo-island.glb）",
       exploreH: "可探索的岛 · 点一点小屋",
       exploreLead:
@@ -69,7 +69,7 @@
       workTagClient: "For hire",
       workEchoTitle: "艾可岛 Echo Island",
       workEchoDesc:
-        "社交向 AI 陪伴与虚拟小岛叙事：<strong>一键进入、二次人生</strong>；首屏右侧即为岛上的循环影像与角色 GLB 预览。",
+        "社交向 AI 陪伴与虚拟小岛叙事：<strong>一键进入、二次人生</strong>；首屏可见岛上的循环影像与角色艾可 GLB 预览。",
       workGuiTitle: "归虚 <span>Gui Xu · UE5</span>",
       workGuiDesc:
         "长线独立游戏方向：梦境层级、碎片与执念机制——需要时可单独展开页面或垂直切片演示。",
@@ -208,7 +208,7 @@
       workTagClient: "For hire",
       workEchoTitle: "Echo Island",
       workEchoDesc:
-        "Social AI companion + pocket island narrative; the sphere on the right runs island footage + an Echo GLB preview.",
+        "Social AI companion + pocket island narrative; the hero shows looping island footage and an Echo GLB preview.",
       workGuiTitle: "Gui Xu <span>UE5</span>",
       workGuiDesc:
         "Long-horizon indie game — dream layers, fragments, obsession loop; can branch into its own page or vertical slice.",
@@ -347,7 +347,7 @@
       workTagClient: "受託",
       workEchoTitle: "エコアイランド Echo Island",
       workEchoDesc:
-        "ソーシャルAIと島のナラティブ。<strong>ワンタップでセカンドライフ</strong>。右側の球で映像とGLBを確認できます。",
+        "ソーシャルAIと島のナラティブ。<strong>ワンタップでセカンドライフ</strong>。ヒーローで島のループ映像とエコGLBを確認できます。",
       workGuiTitle: "帰虚 <span>Gui Xu · UE5</span>",
       workGuiDesc:
         "長期IP · 夢の階層/欠片/執念ループ。必要なら独立ページへ。",
@@ -486,7 +486,7 @@
       workTagClient: "의뢰",
       workEchoTitle: "에코 아일랜드 Echo Island",
       workEchoDesc:
-        "소셜 AI와 섬 내러티브. <strong>원터치 두 번째 삶</strong>. 오른쪽 구에서 영상과 GLB를 확인합니다.",
+        "소셜 AI와 섬 내러티브. <strong>원터치 두 번째 삶</strong>. 히어로에서 섬 루프 영상과 에코 GLB를 확인합니다.",
       workGuiTitle: "귀허 <span>Gui Xu · UE5</span>",
       workGuiDesc:
         "장기 IP · 꿈 층·조각·집착 루프. 필요 시 독립 페이지로.",

@@ -1,5 +1,6 @@
 # GitHub rejects blobs > 100 MB; keep hires locally or host on Aliyun/OSS
 assets/echo-island-hires.glb
+assets/岛.glb
 
 # Local deploy credentials (copy from scripts/deploy.env.example)
 deploy.env
